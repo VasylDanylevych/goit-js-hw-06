@@ -15,13 +15,18 @@ const images = [
 
 
 const galleryEl = document.querySelector(".gallery");
-const elements = images.map(image => {
-  const imageEl = document.createElement("img");
-  imageEl.src = image.url;
-  imageEl.alt = image.alt;
-  imageEl.width = 400;
-  return imageEl
-})
+// const elements = images.map(image => {
+//   const imageEl = document.createElement("img");
+//   imageEl.src = image.url;
+//   imageEl.alt = image.alt;
+//   imageEl.width = 400;
+//   return imageEl
+// })
 
 
-galleryEl.append(...elements);
+// galleryEl.append(...elements);
+
+
+const elements = images.map((image) => `<li><img src = "${image.url}" alt = "${image.alt}" width = "400"></li>`).join("");
+
+galleryEl.insertAdjacentHTML("afterbegin", elements);
